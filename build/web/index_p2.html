@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script type="text/javascript">
+function validate()
+{ 
+   if( document.trainingform.company.value == "" )
+   {
+     alert( "Please provide a company name!" );
+     document.trainingform.company.focus() ;
+     return false;
+   }
+   if( document.trainingform.branch.value == "" )
+   {
+     alert( "Please provide enter your branch!" );
+     document.training.branch.focus() ;
+     return false;
+   }
+   }
+   </script>
+   <style>
+    
+h1 {
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+            color: blue;
+            text-shadow: 2px 2px 5px blue;
+            font-size: 160%; 
+}
+h3{
+  font-family:Arial, Helvetica, sans-serif;
+            color: blue;
+            text-shadow: 2px 2px 5px blue;
+            font-size: 120%;
+}
+body{
+        background-color:  yellowgreen;
+    }
+    table{
+    #new_color tr td:first-child { color: red;}
+    }
+            td{
+			
+            font-family:Arial, Helvetica, sans-serif;
+            color: red;
+            text-shadow: 2px 2px 5px red;
+            font-size: 100%;             
+            }
+            th{
+		
+            font-style: italic;
+            font-size:15px;
+            }
+</style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form name="trainingform" action="jspetoj_p2.jsp" onsubmit="return(validate())" method = "post">
+            <h1>Company Wise Training Details</h1>
+        <table cellpadding="2" width="20%" bgcolor="yellowgreen" align="center"
+cellspacing="2">
+
+            <tr>
+                
+                <td> Company:</td><td> <input type="text" name="company" id="company" size = "30"/> <br/></td>
+            </tr>
+            <tr><td>Branch: </td><td><input type="text" name="branch" id="branch" size="30"/> <br/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit" /></td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>

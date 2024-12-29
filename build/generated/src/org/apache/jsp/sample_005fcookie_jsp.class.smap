@@ -1,0 +1,14 @@
+SMAP
+sample_005fcookie_jsp.java
+JSP
+*S JSP
+*F
++ 0 sample_cookie.jsp
+sample_cookie.jsp
+*L
+5,11:44
+16,12:56
+27,2:68
+29,2:70,3
+31,3:76
+*E

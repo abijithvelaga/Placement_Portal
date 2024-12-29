@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Fetch details of placed students</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/javascript" href="C:/Users/ABHIJITH VELAGA/Desktop/ncp 2020/pro1.js">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                background-color: lightcoral;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post" action="jspetoj.jsp">
+            <h1> Details of Placed Students </h1>
+        <table>
+            <tr>
+                <td>CGPA</td>
+                <td><input type="number" step="0.01" min="3" max="10" name="cgpa" value="3"></td>
+            </tr>
+            <tr>
+                <td>Company(Refer below)</td>
+                <td><input type="text" name="company"></td>
+            </tr>
+            <tr>
+                <td>Department(please refer the bottom of the page) </td>
+                <td><input type="text" name="dept"></td>
+            </tr>
+        </table>
+            
+            <br>
+            <br>
+            <input type="submit" value="submit">
+            
+        </form><br><br>
+        <h4> Disclaimer:Enter the details in lower case letters </h4>
+            <p>Refer below for the list of companies
+            <table>
+                <tr><td>Amazon</td></tr><tr><td>CTS</td></tr><tr><td>Cisco</td></tr><tr><td>IQVia</td></tr><tr><td>Micro Focus</td></tr><tr><td>Microsoft</td></tr>
+            </table>
+            <p>Please enter the abbreviation in CAPS for department name</p>
+            <table>
+                <tr>
+                    <td>cse</td>
+                    <td>Computer Science and Engineering</td>
+                </tr>
+                <tr>
+                    <td>ece</td>
+                    <td>Electronics and Communication Engineering</td>
+                </tr>
+                
+                <tr>
+                    <td>eee</td>
+                    <td>Electronics and Electrical Engineering</td>
+                </tr>
+                <tr>
+                    <td>eie</td>
+                    <td>Electronics and Instrumentation Engineering</td>
+                </tr>
+                <tr>
+                    <td>che</td>
+                    <td>Chemical engineering</td>
+                </tr>
+            </table>
+            
+    </body>
+</html>

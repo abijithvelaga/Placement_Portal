@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/javascript" href="C:/Users/ABHIJITH VELAGA/Desktop/ncp 2020/pro1.js">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Placement Registration form</title>
+    <style >
+    	body{
+    		font-family: "Comic Sans MS",sans-serif;
+    		margin:0;
+    		background-color: lightgray;
+    	}
+    	h1{
+    		text-align: center;
+    	}
+    	h2{
+    		background-color: #597185;
+    		color: #EAD3B4;
+    		text-align: center;
+    		padding: 10px;
+                border-radius: 5px;
+    	}
+    	td{
+    		padding: 7px;
+    		font-size: 15px;
+    	  }
+    	  #reset{
+    	  	margin-left: 450px;
+    	  	padding:3px;
+    	  	margin-bottom: 25px;
+    	  }
+    	  #register{
+    	  	margin-left: 900px;
+    	  	padding: 3px;
+    	  }
+    	.required {
+  				color: red;
+				 }
+		.below{
+			font-size: 12px;
+			padding: 8px;
+		}
+    </style>
+    <script type="text/javascript">
+    	function validate()
+    	{
+    		var ch=document.forms["myform"]["infocorrect"].value;
+    		var fname=document.forms["myform"]["fname"].value;
+    		var mname=document.forms["myform"]["mname"].value;
+    		var lname=document.forms["myform"]["lname"].value;
+    		var faname=document.forms["myform"]["faname"].value;
+    		var maname=document.forms["myform"]["maname"].value;
+    		var mnumber=document.forms["myform"]["mnumber"].value;
+    		var city=document.forms["myform"]["city"].value;
+    		if(fname==" " || fname==null || fname==isNaN())
+    		{
+    			alert("the first name cannot be empty or a number");
+    			return false;
+    		}
+    		 if(mname==isNaN())
+    		{
+    			alert("the middle name cannot be a number");
+    			return false;
+    		}
+    		if(lname==isNaN())
+    		{
+    			alert("the last name cannot be a number");
+    			return false;
+    		}
+    		if(faname==" " || faname==null || faname==isNaN())
+    		{
+    			alert("the first name cannot be empty or a number");
+    			return false;
+    		}
+    		if(maname==" " || maname==null || maname==isNaN())
+    		{
+    			alert("the fathers name cannot be empty or a number");
+    			return false;
+    		}
+    		if(mnumber.length<10)
+    		{
+    			alert("The mobile number should be length of 10");
+    			return false;
+    		}
+                if(acnumber.length<12)
+    		{
+    			alert("The Aadhar card number should be length of 12");
+    			return false;
+    		}
+    		if(city===" ")
+    		{
+    			alert("The city should be selected");
+    			return false;
+    		}
+    		if(ch!="yes")
+    		{
+    			alert("The checkbox hasn't been checked");
+    			return false;
+    		}
+    	}
+	function copy() {
+    var val=document.getElementById("current").value;
+    document.getElementById("permanent").innerHTML=val;
+}
+</script>
+</head>
+<body>
+	<h1 align="center">Placement Registration Form</h1>
+        <form name="myform" onsubmit="return validate()" method="post" action="placement_registration_jsp.jsp">
+		<h2>Personal Information</h2>
+		<table width="100%">
+			<tr>
+				<td>First Name<span class="required">*</span></td>
+				<td>
+					<input type="text" size="25" required="" name="fname">
+				</td>
+				<td>Middle Name</td>
+				<td>
+					<input type="text" size="25" name="mname">
+				</td>
+				<td>Last Name</td>
+				<td>
+					<input type="text" size="25" name="lname">
+				</td>
+			</tr>
+			<tr>
+				<td>Father's Name<span class="required">*</span></td>
+				<td>
+					<input type="text" size="25" required="" name="faname">
+				</td>
+				<td>Mother's Name<span class="required">*</span></td>
+				<td>
+					<input type="text" size="25" required="" name="maname">
+				</td>
+			</tr>
+			<tr>
+				<td>Current Address<span class="required">*</span></td>
+				<td>
+				<textarea rows="5" cols="26" required="" id="current" name="caddress"></textarea>
+				<button type="reset" class="btn btn-default" onclick="copy()">Copy</button>
+					<br><span>(Press if same permanent and current address)</span>
+				</td>
+				<td>Permanent Address<span class="required">*</span></td>
+				<td>
+                                    <textarea rows="5" cols="26" required="" id="permanent" name="paddress"></textarea>
+				</td>
+				<td>
+
+				</td>
+			</tr>
+			<tr>
+				<td>Phone Numbers</td>
+			</tr>
+			<tr>
+				<td>
+					Home Phone
+				</td>
+				<td>
+                                    <input type="text" size="25" name="hphone">
+				</td>
+				<td>Mobile Number<span class="required">*</span></td>
+				<td>
+					<input type="Number" name="mnumber" required="">
+				</td>
+			</tr>
+			<tr>
+				<td>Date Of Birth<span class="required">*</span></td>
+				<td>
+					<input type="Date" name="dob" required="">
+				</td>
+				<td>Place Of Birth<span class="required">*</span></td>
+				<td><input type="text" size="25" required="" name="pob"></td>
+			</tr>
+			<tr>
+				<td colspan="2">Select a Gender<span class="required">*</span></td>
+				<td>
+					<input type="radio" name="gender" value="male">Male
+				</td>
+				<td>
+					<input type="radio" name="gender" value="female">Female
+				</td>
+			</tr>
+			<tr>
+				<td>Highest Qualification<span class="required">*</span></td>
+				<td>
+				<input type="text"  size="25" required="" name="hqualify">
+				</td>
+				<td>Year Of Passing<span class="required">*</span></td>
+				<td>
+					<input type="month"  required="" name="yop" >
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">Languages known</td>
+				<td>
+					<input type="checkbox" value="english" name="english">English
+				</td>
+				<td>
+					<input type="checkbox" value="hindi" name="hindi">Hindi
+				</td>
+				<td>
+                                    <input type="checkbox" value="tamil" name="tamil">Tamil
+				</td>
+				<td colspan="2">
+                                    <input type="checkbox" value="telugu" name="telugu">Telugu
+				</td>
+			</tr>
+				<tr>
+					<td>About Yourself</td>
+					<td colspan="3">
+						<textarea rows="5" cols="80"> </textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>City<span class="required">*</span></td>
+					<td>
+						<select required="" name="city">
+							<option value="" selected="selected">Select State *</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Andaman and Nicobar">Andaman and Nicobar</option> 
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Dadra And Nagar Haveli">Dadra And Nagar Haveli</option>
+                  <option value="Daman And Diu">Daman And Diu</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Puducherry">Puducherry</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Aadhar Card Number</td>
+					<td>
+						<input type="Number" name="acnumber">
+					</td>
+					<td>PAN CARD Number</td>
+					<td>
+                                            <input type="text" size="25" name="pcnumber">
+					</td>
+				</tr>
+		</table>
+
+		<!--education details-->
+		<h2>Education Details</h2>
+		<table width="100%">
+			<tr>
+				<td><b>S.NO</b></td>
+				<td><b>Degree</b></td>
+				<td><b>Qualification</b></td>
+				<td><b>Institute / University</b></td>
+				<td><b>Year Of Passing</b></td>
+				<td><b>Marks (%)</b></td>
+			</tr>
+			
+			<tr>
+				<td>1.</td>
+				<td> Graduate</td>
+				<td>
+					<select name="graduatequalification">
+							<option value="cse">Computer Science Engineering</option>
+                                                        <option value="eee">Electrical Electronics Engineering</option>
+                                                        <option value="me">Mechanical Engineering</option>
+							<option value="ece">Electrical Communication Engineering</option>
+                                                        <option value="ce">Civil Engineering</option>
+							<option value="ae">Aerospace Engineering</option>
+                                                        <option value="mtech">M-Tech</option>
+                                                        <option value="bsc_cs">BSc computer science</option>
+                                                        <option value="Bsc_pcm">BSc PCM</option>
+                                                        <option value="mc">Mass Communication</option>
+                                                        <option value="others">Others</option>
+						</select>
+				</td>
+				<td>
+				<input type="text" size="25" name="graduateuniversity">
+				</td>
+				<td>
+					<input type="month" name="graduateop">
+				</td>
+				<td>
+					<input type="number" name="graduatemarks" min="0" max="100">
+				</td>
+			</tr>
+
+			<tr>
+				<td>2.</td>
+				<td>12<sup>th</sup></td>
+				<td>
+                                    <select name="statequalification">
+                                        <option value="state_board">State Board</option>
+                                        <option value="cbse">CBSE</option>
+                                        <option value="others">Others</option>
+						</select>
+				</td>
+				<td>
+				<input type="text" name="stateuniversity" size="25">
+				</td>
+				<td>
+					<input type="month" name="stateop">
+				</td>
+				<td>
+					<input type="number" name="statemarks" min="0" max="100">
+				</td>
+			</tr>
+
+			<tr>
+				<td>3.</td>
+				<td>10<sup>th</sup></td>
+				<td>
+					<select name="10_qualification">
+                                            <option value="state_board">State Board</option>
+                                            <option value="cbse">CBSE</option>
+                                            <option value="icse">ICSE</option>
+                                            <option value="others">Others</option>
+						</select>
+				</td>
+				<td>
+				<input type="text" name="10_university" size="25">
+				</td>
+				<td>
+					<input type="month" name="10_op">
+				</td>
+				<td>
+					<input type="number" name="10_marks" min="0" max="100">
+				</td>
+			</tr>
+		</table>
+
+		<!-- contact deatils-->
+		<h2>Contact Details</h2>
+		<table width="100%">
+			<tr>
+				<td>Email ID:<span class="required">*</span></td>
+				<td><input type="Email" name="email" required=""></td>
+				<td>Alternate Email ID:</td>
+				<td><input type="Email" name="aemail"></td>
+			</tr>
+			<tr>
+				<td>Mobile Number:<span class="required">*</span></td>
+				<td><input type="number" name="manumber" min="0" required=""></td>
+				<td>Alternate Contact Number:</td>
+				<td><input type="number" name="anumber" min="0"></td>
+			</tr>
+
+		</table>
+
+		<!-- other details-->
+			<h2>Other Details</h2>
+		<table width="100%">
+			
+			<tr></tr>
+			<tr>
+				<td colspan="2">Updated Resume <span class="required">*</span></td>
+				<td>
+					<input type="file" name="resume" required="">
+				</td>
+				<td colspan="2s">
+					Recent Photo<span class="required">*</span>
+				</td>
+				<td>
+					<input type="file" name="photo" required="">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td class="below">(The file should be in the format of .docx or .pdf)</td>
+				<td colspan="2"></td>
+				<td class="below">(The file should be in the format of .png,.jpeg or .jpg and the file <br>size should not be maximum than 1MB)</td>
+			</tr>
+			
+			<tr>
+				<td colspan="3">Are there any break in studies?</td>
+				
+				<td colspan="2">
+					<input type="text" name="stbreak" size="50">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">Rewards Or Scholarships:</td>
+				
+				<td colspan="2">
+					<input type="text" name="scholar" size="50">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"> Basic Coding Languages Known:</td>
+				<td colspan="2"> <input type="checkbox" name="c"> C</td>
+				<td> <input type="checkbox" name="c++"> C++</td>
+				<td> <input type="checkbox" name="java">Java</td>
+				<td> <input type="checkbox" name="python"> Python</td>
+			</tr>
+			<tr>
+				<td colspan="2"> Do you have any pending backlogs currently?</td>
+				<td colspan="2">
+					<input type="radio" name="log" value="yes">Yes
+				</td>
+				<td>
+					<input type="radio" name="log" value="no">No
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">Disclaimer(<span class="required">*</span>is required):</td>
+				<td colspan="3">
+					<input type="checkbox" name="infocorrect" value="yes"><span>All the above mentioned information is
+					correct as per my knowledge</span>
+				</td>
+				<td></td>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
+		</table>
+		<br>
+		<input type="reset" name="reset" value="reset" id="reset">
+		<input type="submit" name="submit" value="Register" id="register">
+	</form>
+
+</body>
+</html>
